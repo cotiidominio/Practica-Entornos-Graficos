@@ -3,13 +3,11 @@ $enviado = false;
 $error = '';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-  // Validación básica
   $nombre = strip_tags(trim($_POST['nombre'] ?? ''));
   $email = filter_var($_POST['email'] ?? '', FILTER_VALIDATE_EMAIL);
   $mensaje = strip_tags(trim($_POST['mensaje'] ?? ''));
 
   if ($nombre && $email && $mensaje) {
-    // Preparar el correo
     $para = 'webmaster@tusitio.com';
     $asunto = 'Consulta desde el sitio web';
 
